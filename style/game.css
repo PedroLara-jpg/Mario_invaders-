@@ -9,6 +9,59 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    background: linear-gradient(to bottom, #66c8ff 0%, #53a7ff 40%, #3c78d8 70%, #2b52a3 100%);
+}
+
+.timer {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: system-ui, sans-serif;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    z-index: 20;
+}
+.paused .inimigo {
+    animation-play-state: paused;
+}
+
+.pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 48px;
+    font-family: system-ui, sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 30;
+    pointer-events: none;
+}
+body {
+    background: radial-gradient(circle at top, #a0d6ff 0%, #5a8fcc 70%, #1b3f7a 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, #6bbf33 0%, #274d0e 100%);
+    box-shadow: inset 0 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 5;
 }
 
 .inimigo {
@@ -56,10 +109,11 @@
 
 .jogador {
     position: absolute;
-    bottom: 20px;
+    bottom: 90px;
     left: 50%;
     transform: translateX(-50%);
     width: 300px;
     height: 300px;
     object-fit: contain;
+    z-index: 10;
 }
